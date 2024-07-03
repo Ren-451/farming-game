@@ -9,6 +9,7 @@
 texture = ExtResource("2_ds2vt")
 
 [node name="Inventory" type="Node2D"]
+position = Vector2(131, 86)
 script = ExtResource("1_0n7rp")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -254,4 +255,5 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_gimk6")
 script = ExtResource("3_5jyut")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, 5)
 zoom = Vector2(4, 4)

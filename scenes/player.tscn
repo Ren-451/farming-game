@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://cwgsyuugjec7y"]
+[gd_scene load_steps=23 format=3 uid="uid://cwgsyuugjec7y"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_oesra"]
 [ext_resource type="Texture2D" uid="uid://dcnvfi3mwyhjy" path="res://art/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="1_r2mwh"]
+[ext_resource type="Script" path="res://scripts/PickupZone.gd" id="3_qjiiu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wfpuu"]
 atlas = ExtResource("1_r2mwh")
@@ -161,9 +162,13 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_4f4pm"]
 radius = 6.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qtdcm"]
+radius = 13.0
+
 [node name="player" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
 collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_oesra")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -176,3 +181,18 @@ frame_progress = 0.0571627
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
 shape = SubResource("CircleShape2D_4f4pm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+
+[node name="PickupZone" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+script = ExtResource("3_qjiiu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupZone"]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_qtdcm")
+
+[connection signal="body_entered" from="PickupZone" to="PickupZone" method="_on_body_entered"]
+[connection signal="body_exited" from="PickupZone" to="PickupZone" method="_on_body_exited"]

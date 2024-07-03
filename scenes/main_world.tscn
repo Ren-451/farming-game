@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cem1s01e444xu"]
+[gd_scene load_steps=25 format=3 uid="uid://cem1s01e444xu"]
 
 [ext_resource type="Script" path="res://scripts/main_world.gd" id="1_ods8g"]
 [ext_resource type="Texture2D" uid="uid://cc6e2623i37av" path="res://art/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden House.png" id="2_qd53y"]
@@ -10,7 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://cf8lvxafnxlq4" path="res://art/Sprout Lands - Sprites - Basic pack/Tilesets/Tilled_Dirt.png" id="7_elbbt"]
 [ext_resource type="PackedScene" uid="uid://cwgsyuugjec7y" path="res://scenes/player.tscn" id="8_pyd0n"]
 [ext_resource type="Texture2D" uid="uid://c6mtjyx3ppn2s" path="res://art/Sprout Lands - Sprites - Basic pack/Objects/Basic_Plants.png" id="9_f0as5"]
+[ext_resource type="Script" path="res://scripts/UserInterface.gd" id="12_3mynb"]
+[ext_resource type="PackedScene" uid="uid://ckkyg2cohxifm" path="res://scenes/inventory.tscn" id="13_s6e5y"]
 [ext_resource type="Texture2D" uid="uid://dbmq2r0wduwrk" path="res://art/Sprout Lands - Sprites - Basic pack/Objects/Free_Chicken_House.png" id="14_tqtmd"]
+[ext_resource type="PackedScene" uid="uid://b4l0rjpa6xxdw" path="res://scenes/item_drop.tscn" id="14_yn8cc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8k6cw"]
 texture = ExtResource("2_y8cti")
@@ -4586,5 +4589,16 @@ layer_3/name = "elements"
 layer_3/y_sort_enabled = true
 layer_3/tile_data = PackedInt32Array(262140, 458767, 7, 786444, 1572879, 6, 786428, 589839, 7, 131076, 589839, 7, 1114116, 1703951, 6, 1114130, 1441807, 6, 458753, 458767, 10, 983038, 458767, 10, 983050, 393231, 10, 720902, 393231, 10, 720914, 393231, 10, 720899, 655375, 9, 917510, 720911, 9, 917518, 786447, 8, 983041, 786447, 8, 655352, 786447, 8, 720905, 917519, 8, 720896, 917519, 8, 262146, 917519, 8, 262144, 1507343, 6, 327677, 1703951, 6, 65537, 1638415, 5, 1245190, 851983, 10, 851970, 851983, 10, 589821, 851983, 10, 851986, 720911, 10, 655372, 720911, 10, 589827, 720911, 10, 1048571, 720911, 10, 1179649, 786447, 10, 851984, 1441807, 6, 524324, 917519, 9, 786460, 458767, 7, 786464, 393231, 7, 524321, 393231, 7, 589850, 393231, 7, 655394, 917519, 8, 720922, 917519, 8, 720929, 786447, 8, 589853, 786447, 8, 1114146, 786447, 8, 1310747, 786447, 8, 1441825, 720911, 9, 655392, 851983, 9, 851994, 851983, 9, 1048600, 851983, 9, 1441827, 720911, 10, 1245209, 851983, 11, 1441820, 1703951, 5, 1376292, 458767, 10, 589816, 1769487, 5, 720888, 1638415, 6, 851961, 1703951, 6, 851962, 1441807, 6, 327676, 1769487, 5, 524284, 1572879, 6, 851964, 1507343, 1, 524285, 1441807, 5, 720893, 1572879, 5, 917501, 1703951, 6, 196606, 1572879, 6, 983039, 1769487, 6, 786432, 1703951, 5, 1048576, 1703951, 6, 262145, 1638415, 6, 720897, 1769487, 6, 655362, 1638415, 6, 524291, 1769487, 5, 196612, 1769487, 6, 720900, 1638415, 6, 1245188, 1703951, 5, 196613, 1638415, 6, 655365, 1507343, 5, 983045, 1769487, 5, 1310726, 1638415, 6, 720904, 1769487, 6, 786441, 1572879, 5, 1114121, 1507343, 5, 851978, 1572879, 6, 1048586, 1507343, 5, 655371, 1441807, 5, 983051, 1703951, 5, 655373, 1507343, 1, 851981, 1769487, 5, 786446, 1638415, 5, 851982, 1638415, 6, 851983, 1769487, 6, 1048593, 1507343, 1, 1114129, 1638415, 5, 786450, 1507343, 5, 1048594, 1441807, 6, 851988, 1769487, 6, 1114132, 1507343, 5, 851989, 1703951, 5, 917526, 1703951, 5, 851991, 1441807, 5, 1245208, 1703951, 5, 1376281, 1572879, 6, 655386, 1572879, 5, 1048602, 1441807, 5, 1179674, 1441807, 6, 1376282, 1507343, 5, 720923, 1507343, 6, 851995, 1507343, 1, 1245211, 1572879, 6, 655388, 1703951, 6, 1179677, 1703951, 6, 1376285, 1441807, 6, 720926, 1507343, 6, 524320, 1441807, 5, 589856, 1638415, 6, 524322, 1507343, 5, 1048610, 1507343, 5, 1376290, 1441807, 5, 1441826, 1507343, 5, 589859, 1703951, 5, 655395, 1572879, 6, 327674, 1507343, 5, 917538, 1638415, 6, 983065, 1703951, 6)
 
+[node name="ItemDrop" parent="." instance=ExtResource("14_yn8cc")]
+position = Vector2(-17, 98)
+collision_layer = 4
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("8_pyd0n")]
 position = Vector2(-7, 48)
+collision_mask = 3
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+script = ExtResource("12_3mynb")
+
+[node name="Inventory" parent="UserInterface" instance=ExtResource("13_s6e5y")]
+visible = false

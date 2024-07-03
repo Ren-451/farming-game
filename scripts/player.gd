@@ -5,8 +5,9 @@ var speed = 100
 var player_state
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var pickup_zone = $PickupZone
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var dir = Input.get_vector("left", "right", "up", "down")
 	
 	if dir.x == 0 and dir.y ==0:
@@ -42,3 +43,10 @@ func play_anim(dir):
 		
 func player():
 	pass
+
+func _input(event):
+	if event.is_action_pressed("interact"):
+		if pickup_zone.items_in_range.size() > 0:
+			var pickup_item = pickup_zone.items_in_range.size()[0]
+			pickup_item.being_picked_up(self)
+			pickup_zone.items_in_range.erase(pickup_item)[1]

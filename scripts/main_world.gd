@@ -11,7 +11,7 @@ func _ready():
 	pass 
 
 
-func _input(event):
+func _input(_event):
 	# planting seeds
 	if Input.is_action_just_pressed("click"):
 		
