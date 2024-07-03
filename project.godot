@@ -26,6 +26,10 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 directories/dch_directory={}
 directories/dtl_directory={}
 
+[display]
+
+mouse_cursor/custom_image="res://art/Mouse sprites/Triangle Mouse icon 1.png"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"

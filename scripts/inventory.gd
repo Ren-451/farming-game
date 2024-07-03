@@ -12,15 +12,33 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
 			if hold_item != null:
+				# empty slot
 				if !slot.item:
 					slot.putIntoSlot(hold_item)
 					hold_item = null
+				# slot already contains an item
 				else:
-					var temp_item = slot.item
-					slot.pickFromSlot()
-					temp_item.global_position = event.global_position
-					slot.putIntoSlot(hold_item)
-					hold_item = temp_item
+					# Different items ; swap
+					if hold_item.item_name != slot.item.item_name:
+						var temp_item = slot.item
+						slot.pickFromSlot()
+						temp_item.global_position = event.global_position
+						slot.putIntoSlot(hold_item)
+						hold_item = temp_item
+					
+					#Same item, merge
+					else:
+						var stack_size = int(Jsondata.item_data[slot.item.item_name]["StackSize"])
+						var able_to_add = stack_size - slot.item.item_quantity
+						if able_to_add >= hold_item.item_quantity:
+							slot.item.add_item_quantity(hold_item.item_quantity)
+							hold_item.queue_free()
+							hold_item = null
+						
+						else:
+							slot.item.add_item_quantity(able_to_add)
+							hold_item.decrease_item_quantity(able_to_add)
+			# not holding item
 			elif slot.item:
 				hold_item = slot.item
 				slot.pickFromSlot()
