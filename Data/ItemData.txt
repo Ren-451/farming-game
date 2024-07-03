@@ -1,0 +1,15 @@
+{
+"Egg" : {
+	"ItemType" : "Consumable",
+	"AddHealth" : 5,
+	"AddEnergy" : 10,
+	"StackSize" : 64,
+	"Description" : "A wonderful produce made by chickens."
+},
+
+"Empty Glass" : {
+	"ItemType" : "Miscellaneous",
+	"Stack Size" : 8,
+	"Description" : "It can be sold as is or be used to store liquids."
+}
+}
