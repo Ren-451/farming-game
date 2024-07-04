@@ -47,6 +47,6 @@ func player():
 func _input(event):
 	if event.is_action_pressed("interact"):
 		if pickup_zone.items_in_range.size() > 0:
-			var pickup_item = pickup_zone.items_in_range.size()[0]
-			pickup_item.being_picked_up(self)
-			pickup_zone.items_in_range.erase(pickup_item)[1]
+			var pickup_item = pickup_zone.items_in_range.values()[0]
+			pickup_item.pick_up_item(self)
+			pickup_zone.items_in_range.erase(pickup_item)

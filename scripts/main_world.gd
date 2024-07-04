@@ -12,8 +12,10 @@ func _ready():
 
 
 func _input(_event):
-	# planting seeds
 	if Input.is_action_just_pressed("click"):
+		print("click!")
+	# planting seeds
+	if Input.is_action_just_pressed("right-click"):
 		
 		var mouse_pos : Vector2 = get_global_mouse_position() # <- very accurate mouse position; per pixel
 		#print("global mouse position: ", mouse_pos)

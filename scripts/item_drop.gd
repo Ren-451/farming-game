@@ -18,11 +18,11 @@ func _physics_process(delta):
 		velocity = velocity.move_toward(dir * max_speed, acceleration * delta)
 		
 		var distance = global_position.direction_to(player.global_position)
-		if distance < 10:
+		if distance.x or distance.y < 10:
 			queue_free()
 	
 	velocity = move_and_slide()
 
-func _pick_up_item(body):
+func pick_up_item(body):
 	player = body
 	being_picked_up = true
