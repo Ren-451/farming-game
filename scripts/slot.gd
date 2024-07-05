@@ -15,10 +15,10 @@ func _ready():
 	def_style.texture = def_tex
 	emp_style.texture = emp_tex
 	
-	if randi() % 2 == 0:
-		item = iClass.instantiate()
-		add_child(item)
-	refstyle()
+	#if randi() % 2 == 0:
+		#item = iClass.instantiate()
+		#add_child(item)
+	#refstyle()
 	
 func refstyle():
 	if item == null:
@@ -40,3 +40,12 @@ func putIntoSlot(new_item):
 	inventoryNode.remove_child(item)
 	add_child(item)
 	refstyle()	
+
+func initialize_item(item_name, item_quantity):
+	if item == null:
+		item = iClass.instantiate()
+		add_child(item)
+		item.set_item(item_name, item_quantity)
+	else:
+		item.set_item(item_name, item_quantity)
+	refstyle()
