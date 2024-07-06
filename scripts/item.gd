@@ -22,6 +22,18 @@ func _ready():
 	else:
 		label.text = str(item_quantity)
 
+func set_item(nm, qt):
+	item_name = nm
+	item_quantity = qt
+	texture_rect.texture = load("res://items/" + item_name + ".png")
+	
+	var stack_size = int(Jsondata.item_data[item_name]["StackSize"])
+	if stack_size == 1:
+		label.visible = false
+	else:
+		label.visible = true
+		label.text = str(item_quantity)
+
 func add_item_quantity(amount_to_add):
 	item_quantity += amount_to_add
 	label.text = str(item_quantity)
