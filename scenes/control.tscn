@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwku4ondwfiro"]
+
+[ext_resource type="Texture2D" uid="uid://c8qcg1iu6o6a" path="res://tools/axe.png" id="1_ubb2l"]
+[ext_resource type="Texture2D" uid="uid://b4e7oqm2vfyp2" path="res://tools/hoe.png" id="2_t678t"]
+[ext_resource type="Texture2D" uid="uid://cdvdersihmdkp" path="res://tools/pickaxe.png" id="3_36efh"]
+[ext_resource type="Texture2D" uid="uid://v3um2iujgqt3" path="res://tools/shovel.png" id="4_wnql6"]
+[ext_resource type="Texture2D" uid="uid://bdfydemnt4meg" path="res://tools/sword.png" id="5_erled"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 5
+
+[node name="Button" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("1_ubb2l")
+
+[node name="Button2" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("2_t678t")
+
+[node name="Button3" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("3_36efh")
+
+[node name="Button4" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("4_wnql6")
+
+[node name="Button5" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("5_erled")
