@@ -4602,3 +4602,7 @@ visible = false
 [node name="ItemDrop" parent="." instance=ExtResource("14_yn8cc")]
 position = Vector2(-17, 98)
 collision_layer = 4
+
+[node name="ItemDrop2" parent="." instance=ExtResource("14_yn8cc")]
+position = Vector2(18, 152)
+collision_layer = 4

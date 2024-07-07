@@ -21,37 +21,53 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 			if hold_item != null:
 				# empty slot
 				if !slot.item:
-					slot.putIntoSlot(hold_item)
-					hold_item = null
+					left_click_empty_slot(slot)
+					
 				# slot already contains an item
 				else:
 					# Different items ; swap
 					if hold_item.item_name != slot.item.item_name:
-						var temp_item = slot.item
-						slot.pickFromSlot()
-						temp_item.global_position = event.global_position
-						slot.putIntoSlot(hold_item)
-						hold_item = temp_item
+						left_click_diff_item(event, slot)
 					
 					#Same item, merge
 					else:
-						var stack_size = int(Jsondata.item_data[slot.item.item_name]["StackSize"])
-						var able_to_add = stack_size - slot.item.item_quantity
-						if able_to_add >= hold_item.item_quantity:
-							slot.item.add_item_quantity(hold_item.item_quantity)
-							hold_item.queue_free()
-							hold_item = null
-						
-						else:
-							slot.item.add_item_quantity(able_to_add)
-							hold_item.decrease_item_quantity(able_to_add)
+						left_click_same_item(slot)
+
 			# not holding item
 			elif slot.item:
-				hold_item = slot.item
-				slot.pickFromSlot()
-				hold_item.global_position = get_global_mouse_position()
+				left_click_not_holding(slot)
 
 func _input(_event):
 	if hold_item:
 		hold_item.global_position = get_global_mouse_position()
 		
+
+func left_click_empty_slot(slot: SlotClass):
+	PlayerInventory.add_item_to_empty_slot(slot)
+	slot.putIntoSlot(hold_item)
+	hold_item = null
+	
+
+func left_click_diff_item(event : InputEvent, slot : SlotClass):
+	var temp_item = slot.item
+	slot.pickFromSlot()
+	temp_item.global_position = event.global_position
+	slot.putIntoSlot(hold_item)
+	hold_item = temp_item
+	
+func left_click_same_item(slot : SlotClass):
+	var stack_size = int(Jsondata.item_data[slot.item.item_name]["StackSize"])
+	var able_to_add = stack_size - slot.item.item_quantity
+	if able_to_add >= hold_item.item_quantity:
+		slot.item.add_item_quantity(hold_item.item_quantity)
+		hold_item.queue_free()
+		hold_item = null
+
+	else:
+		slot.item.add_item_quantity(able_to_add)
+		hold_item.decrease_item_quantity(able_to_add)
+
+func left_click_not_holding(slot : SlotClass):
+	hold_item = slot.item
+	slot.pickFromSlot()
+	hold_item.global_position = get_global_mouse_position()
