@@ -18,7 +18,7 @@ func _ready():
 	#if randi() % 2 == 0:
 		#item = iClass.instantiate()
 		#add_child(item)
-	#refstyle()
+	refstyle()
 	
 func refstyle():
 	if item == null:

@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwku4ondwfiro"]
+
+[ext_resource type="Script" path="res://scripts/hotbar.gd" id="1_yq186"]
+[ext_resource type="Texture2D" uid="uid://bdfydemnt4meg" path="res://tools/sword.png" id="2_pucip"]
+[ext_resource type="Texture2D" uid="uid://cdvdersihmdkp" path="res://tools/pickaxe.png" id="3_2hl5x"]
+[ext_resource type="Script" path="res://scripts/ItemButton.gd" id="3_ajoex"]
+[ext_resource type="Texture2D" uid="uid://c8qcg1iu6o6a" path="res://tools/axe.png" id="4_uhc6g"]
+[ext_resource type="Texture2D" uid="uid://v3um2iujgqt3" path="res://tools/shovel.png" id="5_crw2m"]
+[ext_resource type="Texture2D" uid="uid://b4e7oqm2vfyp2" path="res://tools/hoe.png" id="6_xrtqq"]
+
+[node name="Hotbar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yq186")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -68.0
+offset_top = -24.0
+offset_right = 68.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 5
+
+[node name="ItemButton" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("2_pucip")
+script = ExtResource("3_ajoex")
+
+[node name="ItemButton2" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("3_2hl5x")
+
+[node name="ItemButton3" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("4_uhc6g")
+
+[node name="ItemButton4" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("5_crw2m")
+
+[node name="ItemButton5" type="Button" parent="GridContainer"]
+layout_mode = 2
+icon = ExtResource("6_xrtqq")
