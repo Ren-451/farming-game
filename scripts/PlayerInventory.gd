@@ -1,5 +1,7 @@
 extends Node
 
+const SlotClass = preload("res://scripts/slot.gd")
+const iClass = preload("res://scripts/item.gd")
 const NUM_INV_SLOTS = 36
 
 var inventory = {
@@ -20,3 +22,12 @@ func add_item(item_name, item_quantity):
 		if inventory.has(i) == false:
 			inventory[i] = [item_name, item_quantity]
 			return
+
+func remove_item(slot : SlotClass):
+	inventory.erase(slot.slot_index)
+
+func add_item_to_empty_slot(item : iClass, slot : SlotClass):
+	inventory[slot.slot_index] = [item.item_name, item.item_quantity]
+
+func add_item_quantity(slot : SlotClass, quantity_to_add : int):
+	inventory[slot.slot_index][1] += quantity_to_add

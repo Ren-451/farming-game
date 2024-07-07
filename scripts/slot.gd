@@ -8,6 +8,7 @@ var emp_style: StyleBoxTexture = null
 
 var iClass = preload("res://scenes/item.tscn")
 var item = null
+var slot_index
 
 func _ready():
 	def_style = StyleBoxTexture.new()

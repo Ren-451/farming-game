@@ -5,8 +5,10 @@ const SlotClass = preload("res://scripts/slot.gd")
 var hold_item = null
 
 func _ready():
-	for inv_slot in inv_slots.get_children():
-		inv_slot.gui_input.connect(slot_gui_input.bind(inv_slot))
+	var slots = inv_slots.get_children()
+	for i in range(slots.size()):
+		slots[i].gui_input.connect(slot_gui_input.bind(slots[i]))
+		slots[i].slot_index = i
 	initialize_inventory()
 
 func initialize_inventory():
@@ -42,13 +44,15 @@ func _input(_event):
 		hold_item.global_position = get_global_mouse_position()
 		
 
-func left_click_empty_slot(slot: SlotClass):
-	PlayerInventory.add_item_to_empty_slot(slot)
+func left_click_empty_slot(slot : SlotClass):
+	PlayerInventory.add_item_to_empty_slot(hold_item, slot)
 	slot.putIntoSlot(hold_item)
 	hold_item = null
 	
 
 func left_click_diff_item(event : InputEvent, slot : SlotClass):
+	PlayerInventory.remove_item(slot)
+	PlayerInventory.add_item_to_empty_slot(hold_item, slot)
 	var temp_item = slot.item
 	slot.pickFromSlot()
 	temp_item.global_position = event.global_position
@@ -59,15 +63,18 @@ func left_click_same_item(slot : SlotClass):
 	var stack_size = int(Jsondata.item_data[slot.item.item_name]["StackSize"])
 	var able_to_add = stack_size - slot.item.item_quantity
 	if able_to_add >= hold_item.item_quantity:
+		PlayerInventory.add_item_quantity(slot, hold_item.item_quantity)
 		slot.item.add_item_quantity(hold_item.item_quantity)
 		hold_item.queue_free()
 		hold_item = null
 
 	else:
+		PlayerInventory.add_item_quantity(slot, able_to_add)
 		slot.item.add_item_quantity(able_to_add)
 		hold_item.decrease_item_quantity(able_to_add)
 
 func left_click_not_holding(slot : SlotClass):
+	PlayerInventory.remove_item(slot)
 	hold_item = slot.item
 	slot.pickFromSlot()
 	hold_item.global_position = get_global_mouse_position()
