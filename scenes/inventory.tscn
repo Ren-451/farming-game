@@ -8,7 +8,7 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gimk6"]
 texture = ExtResource("2_ds2vt")
 
-[node name="Inventory" type="Node2D"]
+[node name="Inventory" type="Node2D" groups=["Inventory"]]
 position = Vector2(221, 145)
 scale = Vector2(2, 2)
 script = ExtResource("1_0n7rp")
