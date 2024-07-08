@@ -29,13 +29,13 @@ func add_item(item_name, item_quantity):
 	for i in range(NUM_INV_SLOTS):
 		if inventory.has(i) == false:
 			inventory[i] = [item_name, item_quantity]
-			update_slot_visual(item, inventory[item][0], inventory[item][1])
+			update_slot_visual(i, inventory[i][0], inventory[i][1])
 			return
 
 func update_slot_visual(slot_index, item_name, new_quantity):
 	var inventoryscene = get_tree().get_first_node_in_group("Inventory")
 	var gridcontainer = inventoryscene.get_node("GridContainer")
-	var slot = gridcontainer.get_node("Slot" + str(slot_index + 1))
+	var slot = gridcontainer.get_node("slot" + str(slot_index + 1))
 	if slot.item != null:
 		slot.item.set_item(item_name, new_quantity)
 	else:
