@@ -5,92 +5,126 @@
 [ext_resource type="Script" path="res://scripts/slot.gd" id="2_wdcq1"]
 
 [node name="Hotbar" type="Control"]
+custom_minimum_size = Vector2(18, 18)
 layout_mode = 3
+anchors_preset = 0
+offset_right = 384.0
+offset_bottom = 211.0
+scale = Vector2(3, 3)
+size_flags_vertical = 8
+script = ExtResource("1_yq186")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -576.0
-offset_top = -640.0
-offset_right = 576.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_vertical = 8
-script = ExtResource("1_yq186")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.962
-anchor_right = 0.5
-anchor_bottom = 0.962
-offset_left = -248.0
-offset_top = -31.6801
-offset_right = 248.0
-offset_bottom = 24.3199
+offset_left = -136.0
+offset_top = -22.0
+offset_right = 136.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("2_k8dog")
 
 [node name="HotbarSlots" type="GridContainer" parent="."]
-custom_minimum_size = Vector2(24, 24)
+custom_minimum_size = Vector2(18, 18)
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -241.0
-offset_top = 267.0
-offset_right = 241.0
-offset_bottom = 317.0
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -19.0
+offset_right = 130.0
 grow_horizontal = 2
-grow_vertical = 2
-columns = 9
+grow_vertical = 0
+columns = 12
 
 [node name="HotbarSlot1" type="Panel" parent="HotbarSlots"]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("2_wdcq1")
 
 [node name="HotbarSlot2" type="Panel" parent="HotbarSlots"]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("2_wdcq1")
 
 [node name="HotbarSlot3" type="Panel" parent="HotbarSlots"]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("2_wdcq1")
 
 [node name="HotbarSlot4" type="Panel" parent="HotbarSlots"]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("2_wdcq1")
 
 [node name="HotbarSlot5" type="Panel" parent="HotbarSlots"]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("2_wdcq1")
 
 [node name="HotbarSlot6" type="Panel" parent="HotbarSlots"]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("2_wdcq1")
 
 [node name="HotbarSlot7" type="Panel" parent="HotbarSlots"]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("2_wdcq1")
 
 [node name="HotbarSlot8" type="Panel" parent="HotbarSlots"]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("2_wdcq1")
 
 [node name="HotbarSlot9" type="Panel" parent="HotbarSlots"]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(18, 18)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_wdcq1")
+
+[node name="HotbarSlot10" type="Panel" parent="HotbarSlots"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_wdcq1")
+
+[node name="HotbarSlot11" type="Panel" parent="HotbarSlots"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_wdcq1")
+
+[node name="HotbarSlot12" type="Panel" parent="HotbarSlots"]
+custom_minimum_size = Vector2(18, 18)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("2_wdcq1")
