@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cem1s01e444xu"]
+[gd_scene load_steps=26 format=3 uid="uid://cem1s01e444xu"]
 
 [ext_resource type="Script" path="res://scripts/main_world.gd" id="1_ods8g"]
 [ext_resource type="Texture2D" uid="uid://cc6e2623i37av" path="res://art/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden House.png" id="2_qd53y"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c6mtjyx3ppn2s" path="res://art/Sprout Lands - Sprites - Basic pack/Objects/Basic_Plants.png" id="9_f0as5"]
 [ext_resource type="Script" path="res://scripts/UserInterface.gd" id="12_3mynb"]
 [ext_resource type="PackedScene" uid="uid://ckkyg2cohxifm" path="res://scenes/inventory.tscn" id="13_s6e5y"]
+[ext_resource type="PackedScene" uid="uid://dqyqxff18dcv2" path="res://scenes/hotbar.tscn" id="14_q3d50"]
 [ext_resource type="Texture2D" uid="uid://dbmq2r0wduwrk" path="res://art/Sprout Lands - Sprites - Basic pack/Objects/Free_Chicken_House.png" id="14_tqtmd"]
 [ext_resource type="PackedScene" uid="uid://b4l0rjpa6xxdw" path="res://scenes/item_drop.tscn" id="14_yn8cc"]
 
@@ -4598,6 +4599,8 @@ script = ExtResource("12_3mynb")
 
 [node name="Inventory" parent="UserInterface" instance=ExtResource("13_s6e5y")]
 visible = false
+
+[node name="Hotbar" parent="UserInterface" instance=ExtResource("14_q3d50")]
 
 [node name="ItemDrop" parent="." instance=ExtResource("14_yn8cc")]
 position = Vector2(-17, 98)

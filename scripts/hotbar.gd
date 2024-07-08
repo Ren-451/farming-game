@@ -1,11 +1,18 @@
 extends Control
+@onready var hotbar = $HotbarSlots
 
+@onready var slots = hotbar.get_children()
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var slots = hotbar.get_children()
+	for i in range(slots.size()):
+		# slots[i].gui_input.connect(slot_gui_input.bind(slots[i]))
+		slots[i].slot_index = i
+	initialize_hotbar()
 
+func initialize_hotbar():
+	var slots = hotbar.get_children()
+	for i in range(slots.size()):
+		if PlayerInventory.hotbar.has(i):
+			slots[i].initialize_item(PlayerInventory.hotbar[i][0], PlayerInventory.hotbar[i][1])
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

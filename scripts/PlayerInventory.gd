@@ -11,6 +11,11 @@ var inventory = {
 
 }
 
+var hotbar = {
+	0 : ['Egg', 10],
+	1 : ['Empty Glass', 2]
+}
+
 func add_item(item_name, item_quantity):
 	for item in inventory:
 		if inventory[item][0] == item_name:
